@@ -1,0 +1,8 @@
+/*.xcframework
+xcuserdata/
+*.xcframework
+*.ipynb_checkpoints
+.vscode
+xcuserdata/
+.DS_Store
+TON Wallet Contest/

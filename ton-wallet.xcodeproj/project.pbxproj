@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5810084C29EFE6CF00C6A824 /* TonCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5810084B29EFE6CF00C6A824 /* TonCore */; };
+		582AA8EE29D70703002C693B /* Receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8ED29D70703002C693B /* Receive.swift */; };
+		582AA8F029D719F2002C693B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8EF29D719F2002C693B /* TransactionView.swift */; };
+		582AA8F229D71E37002C693B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8F129D71E37002C693B /* SettingsView.swift */; };
+		582AA8F729D72074002C693B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8F629D72074002C693B /* ScannerView.swift */; };
+		582AA8F929D72142002C693B /* _TonConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8F829D72142002C693B /* _TonConnectView.swift */; };
+		5852A54E29DC5D5400A14C59 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852A54D29DC5D5400A14C59 /* Testing.swift */; };
+		585FA85A29E545280072F52C /* SelfSizingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA85929E545280072F52C /* SelfSizingSheet.swift */; };
+		585FA86029E7DDBA0072F52C /* DebugOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */; };
+		585FA86529E7F95E0072F52C /* MainWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA86429E7F95E0072F52C /* MainWalletView.swift */; };
+		585FA86729E8098F0072F52C /* OverrideStatusBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA86629E8098F0072F52C /* OverrideStatusBarColor.swift */; };
+		58A2C0202A00E2E500E2F4C6 /* AppState in Frameworks */ = {isa = PBXBuildFile; productRef = 58A2C01F2A00E2E500E2F4C6 /* AppState */; };
+		58A2C0222A00E2E500E2F4C6 /* Send in Frameworks */ = {isa = PBXBuildFile; productRef = 58A2C0212A00E2E500E2F4C6 /* Send */; };
+		58AC7E7B29F92CCB0012B6A1 /* NewWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 58AC7E7A29F92CCB0012B6A1 /* NewWallet */; };
+		58AC7E7D29F92CCB0012B6A1 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 58AC7E7C29F92CCB0012B6A1 /* SharedUI */; };
+		58AC7E7F29FAB8950012B6A1 /* SwiftyTON in Frameworks */ = {isa = PBXBuildFile; productRef = 58AC7E7E29FAB8950012B6A1 /* SwiftyTON */; };
+		58EBBB8529D4218200742969 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EBBB8429D4218200742969 /* App.swift */; };
+		58EBBB8729D4218200742969 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EBBB8629D4218200742969 /* RootView.swift */; };
+		58EBBB8929D4218400742969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58EBBB8829D4218400742969 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58B056CF29DAAF1A00C23FAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		582AA8EC29D6F46B002C693B /* ton-wallet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ton-wallet-Info.plist"; sourceTree = "<group>"; };
+		582AA8ED29D70703002C693B /* Receive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receive.swift; sourceTree = "<group>"; };
+		582AA8EF29D719F2002C693B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		582AA8F129D71E37002C693B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		582AA8F629D72074002C693B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		582AA8F829D72142002C693B /* _TonConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TonConnectView.swift; sourceTree = "<group>"; };
+		5852A54D29DC5D5400A14C59 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		585A4B2B29ED3A2700547DB3 /* Pkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Pkg; sourceTree = "<group>"; };
+		585FA85929E545280072F52C /* SelfSizingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingSheet.swift; sourceTree = "<group>"; };
+		585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOverlay.swift; sourceTree = "<group>"; };
+		585FA86429E7F95E0072F52C /* MainWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWalletView.swift; sourceTree = "<group>"; };
+		585FA86629E8098F0072F52C /* OverrideStatusBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideStatusBarColor.swift; sourceTree = "<group>"; };
+		589FAC4C29E1BD5C009D6D17 /* Toncoin Wallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Toncoin Wallet.entitlements"; sourceTree = "<group>"; };
+		58B056D029DAAF7800C23FAF /* Toncoin Wallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toncoin Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		58EBBB8129D4218200742969 /* Toncoin Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toncoin Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58EBBB8429D4218200742969 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		58EBBB8629D4218200742969 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		58EBBB8829D4218400742969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58EBBB7E29D4218200742969 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58AC7E7F29FAB8950012B6A1 /* SwiftyTON in Frameworks */,
+				5810084C29EFE6CF00C6A824 /* TonCore in Frameworks */,
+				58A2C0202A00E2E500E2F4C6 /* AppState in Frameworks */,
+				58AC7E7D29F92CCB0012B6A1 /* SharedUI in Frameworks */,
+				58A2C0222A00E2E500E2F4C6 /* Send in Frameworks */,
+				58AC7E7B29F92CCB0012B6A1 /* NewWallet in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		582AA8F329D71F3B002C693B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				58EBBB8629D4218200742969 /* RootView.swift */,
+				585FA86429E7F95E0072F52C /* MainWalletView.swift */,
+				582AA8ED29D70703002C693B /* Receive.swift */,
+				582AA8F129D71E37002C693B /* SettingsView.swift */,
+				582AA8EF29D719F2002C693B /* TransactionView.swift */,
+				582AA8F629D72074002C693B /* ScannerView.swift */,
+				582AA8F829D72142002C693B /* _TonConnectView.swift */,
+				585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		585FA85829E545170072F52C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				585FA85929E545280072F52C /* SelfSizingSheet.swift */,
+				585FA86629E8098F0072F52C /* OverrideStatusBarColor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5887E10C29DACB5200F513C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5852A54D29DC5D5400A14C59 /* Testing.swift */,
+				589FAC4C29E1BD5C009D6D17 /* Toncoin Wallet.entitlements */,
+				58EBBB8829D4218400742969 /* Assets.xcassets */,
+				58B056D029DAAF7800C23FAF /* Toncoin Wallet-Bridging-Header.h */,
+				582AA8EC29D6F46B002C693B /* ton-wallet-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		58EBBB7829D4218200742969 = {
+			isa = PBXGroup;
+			children = (
+				58EBBB8429D4218200742969 /* App.swift */,
+				582AA8F329D71F3B002C693B /* Screens */,
+				585A4B2B29ED3A2700547DB3 /* Pkg */,
+				585FA85829E545170072F52C /* Helpers */,
+				5887E10C29DACB5200F513C0 /* Resources */,
+				58EBBB8229D4218200742969 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58EBBB8229D4218200742969 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58EBBB8129D4218200742969 /* Toncoin Wallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58EBBB8029D4218200742969 /* Toncoin Wallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58EBBB8F29D4218400742969 /* Build configuration list for PBXNativeTarget "Toncoin Wallet" */;
+			buildPhases = (
+				58EBBB7D29D4218200742969 /* Sources */,
+				58EBBB7E29D4218200742969 /* Frameworks */,
+				58EBBB7F29D4218200742969 /* Resources */,
+				58B056CF29DAAF1A00C23FAF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toncoin Wallet";
+			packageProductDependencies = (
+				5810084B29EFE6CF00C6A824 /* TonCore */,
+				58AC7E7A29F92CCB0012B6A1 /* NewWallet */,
+				58AC7E7C29F92CCB0012B6A1 /* SharedUI */,
+				58AC7E7E29FAB8950012B6A1 /* SwiftyTON */,
+				58A2C01F2A00E2E500E2F4C6 /* AppState */,
+				58A2C0212A00E2E500E2F4C6 /* Send */,
+			);
+			productName = "ton-wallet";
+			productReference = 58EBBB8129D4218200742969 /* Toncoin Wallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58EBBB7929D4218200742969 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					58EBBB8029D4218200742969 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+				};
+			};
+			buildConfigurationList = 58EBBB7C29D4218200742969 /* Build configuration list for PBXProject "ton-wallet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58EBBB7829D4218200742969;
+			packageReferences = (
+			);
+			productRefGroup = 58EBBB8229D4218200742969 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58EBBB8029D4218200742969 /* Toncoin Wallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58EBBB7F29D4218200742969 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58EBBB8929D4218400742969 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58EBBB7D29D4218200742969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				582AA8EE29D70703002C693B /* Receive.swift in Sources */,
+				5852A54E29DC5D5400A14C59 /* Testing.swift in Sources */,
+				582AA8F029D719F2002C693B /* TransactionView.swift in Sources */,
+				585FA85A29E545280072F52C /* SelfSizingSheet.swift in Sources */,
+				58EBBB8729D4218200742969 /* RootView.swift in Sources */,
+				582AA8F229D71E37002C693B /* SettingsView.swift in Sources */,
+				585FA86729E8098F0072F52C /* OverrideStatusBarColor.swift in Sources */,
+				58EBBB8529D4218200742969 /* App.swift in Sources */,
+				582AA8F929D72142002C693B /* _TonConnectView.swift in Sources */,
+				585FA86029E7DDBA0072F52C /* DebugOverlay.swift in Sources */,
+				585FA86529E7F95E0072F52C /* MainWalletView.swift in Sources */,
+				582AA8F729D72074002C693B /* ScannerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		58EBBB8D29D4218400742969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		58EBBB8E29D4218400742969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58EBBB9029D4218400742969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Toncoin Wallet.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6RX8GEVB43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ton-wallet-Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is used to authenticate TON payments";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.nikstar.ton-wallet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Toncoin Wallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58EBBB9129D4218400742969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Toncoin Wallet.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6RX8GEVB43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ton-wallet-Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is used to authenticate TON payments";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.nikstar.ton-wallet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Toncoin Wallet-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58EBBB7C29D4218200742969 /* Build configuration list for PBXProject "ton-wallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58EBBB8D29D4218400742969 /* Debug */,
+				58EBBB8E29D4218400742969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58EBBB8F29D4218400742969 /* Build configuration list for PBXNativeTarget "Toncoin Wallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58EBBB9029D4218400742969 /* Debug */,
+				58EBBB9129D4218400742969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5810084B29EFE6CF00C6A824 /* TonCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TonCore;
+		};
+		58A2C01F2A00E2E500E2F4C6 /* AppState */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppState;
+		};
+		58A2C0212A00E2E500E2F4C6 /* Send */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Send;
+		};
+		58AC7E7A29F92CCB0012B6A1 /* NewWallet */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NewWallet;
+		};
+		58AC7E7C29F92CCB0012B6A1 /* SharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedUI;
+		};
+		58AC7E7E29FAB8950012B6A1 /* SwiftyTON */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyTON;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 58EBBB7929D4218200742969 /* Project object */;
+}
