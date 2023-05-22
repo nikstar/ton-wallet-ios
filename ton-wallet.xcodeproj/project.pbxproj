@@ -362,6 +362,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ton-wallet-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR codes";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is used to authenticate TON payments";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -401,6 +402,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ton-wallet-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR codes";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is used to authenticate TON payments";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

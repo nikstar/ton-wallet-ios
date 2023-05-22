@@ -150,7 +150,7 @@ struct Done: View {
 
 struct ImportExisting: View {
     
-    var checkWords: ([String]) -> Bool
+    var checkWords: ([String]) async -> Bool
     var doNotHave: () -> ()
     
     @State private var showAlert = false
@@ -212,9 +212,11 @@ struct ImportExisting: View {
     }
     
     func check() {
-        let words = words.map({ $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() })
-        if !checkWords(words) {
-            showAlert = true
+        Task { @MainActor in
+            let words = words.map({ $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() })
+            if await checkWords(words) == false {
+                showAlert = true
+            }
         }
     }
 }

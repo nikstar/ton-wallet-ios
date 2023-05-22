@@ -5,7 +5,7 @@ import TonCore
 import SwiftUIBackports
 import AppState
 
-
+@available(iOS 16, *)
 public struct SendView: View {
     
     @StateObject private var model: Model = Model()
@@ -28,6 +28,7 @@ public struct SendView: View {
     var authorizeTransaction: (OutgoingTransaction) async throws -> () = { _ in }
     var sendTransaction: (OutgoingTransaction) async throws -> () = {_ in }
         
+    @State private var path: [String] = []
     
     @State var commentText = ""
 
@@ -55,15 +56,19 @@ public struct SendView: View {
     
     public var body: some View {
         Group {
-            if #available(iOS 16, *) {
-                NavigationStack {
+                NavigationStack(path: $path) {
                     rootView
+                        .navigationDestination(for: String.self) { tag in
+                            switch tag {
+                            case "2":
+                                amountView
+                            case "3":
+                                commentView
+                            default:
+                                EmptyView()
+                            }
+                        }
                 }
-            } else {
-                NavigationView {
-                    rootView
-                }
-            }
         }
         .onAppear {
             
@@ -86,16 +91,21 @@ public struct SendView: View {
     var rootView: some View {
         EnterAddressView(
         next: {
-            amountView
+            path.append("2")
         })
+        .environmentObject(model)
     }
     
     var amountView: some View {
-        AmountView()
+        AmountView(next: {
+            path.append("3")
+        })
+        .environmentObject(model)
     }
     
     var commentView: some View {
-        EmptyView()
+        CommentView(next: { dismiss() } )
+        .environmentObject(model)
     }
 }
 

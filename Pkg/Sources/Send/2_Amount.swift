@@ -7,6 +7,9 @@ import TonCore
 
 struct AmountView: View {
 
+    var next: () -> ()
+    @EnvironmentObject var model: Model
+    
     @State private var sendAll: Bool = false
     @State private var toncoin: Toncoin?
     
@@ -14,7 +17,7 @@ struct AmountView: View {
         ScrollView {
             VStack(alignment: .center, spacing: 0) {
                 HStack(alignment: .firstTextBaseline) {
-                    (Text("Send to: ") + Text("EQcC...9ZLD").bold())
+                    (Text("Send to: ") + Text(model.destinationAddress?.string(.base64url, characters: (start: 4, end: 4)) ?? "...").bold())
                     Spacer()
                     Button(action: {}) {
                         Text("Edit")
@@ -38,10 +41,10 @@ struct AmountView: View {
                 Toggle(isOn: $sendAll) {
                     HStack(alignment: .firstTextBaseline) {
                         Text("Send all")
-                        InlineToncoinView(Toncoin(nano: 0))
+                        InlineToncoinView(model.currentBalance() ?? .init(nano: 0))
                     }
                 }
-                NavigationLink(destination: { EmptyView() }, label: {
+                Button(action: { next() }, label: {
                     Text("Continue")
                 })
                     .buttonStyle(.tonBlue)
@@ -49,6 +52,9 @@ struct AmountView: View {
 
             }
             .padding(.horizontal, 16)
+        }
+        .onDisappear {
+            model.amount = toncoin
         }
     }
 }

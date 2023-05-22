@@ -1,12 +1,16 @@
 
 import SwiftUI
 import SwiftUIBackports
-
+import TonCore
+import SharedUI
 
 struct CommentView: View {
     
+    var next: () -> ()
+    
     @State private var commentText = ""
     @Environment(\.backportDismiss) private var dismiss
+    @EnvironmentObject var model: Model
     
     var body: some View {
         List {
@@ -20,17 +24,22 @@ struct CommentView: View {
                 Text("Comment (optional)")
             } footer: {
                 Text("The comment is visible to everyone. You must include the note when sending to an exchange.")
-            }.border(Color.red)
+            }
+            
             Section  {
-                Backport.LabeledContent {
-                    Text("EQCc…9ZLD")
-                } label: {
-                    Text("Recipient")
+                if let a = model.destinationAddress {
+                    Backport.LabeledContent {
+                        Text(a.string(.base64url, characters: (4, 4)))
+                    } label: {
+                        Text("Recipient")
+                    }
                 }
-                Backport.LabeledContent {
-                    Text("56")
-                } label: {
-                    Text("Amount")
+                if let v = model.amount {
+                    Backport.LabeledContent {
+                       InlineToncoinView(v)
+                    } label: {
+                        Text("Amount")
+                    }
                 }
                 Backport.LabeledContent {
                     Text("≈ 0.007")
@@ -46,7 +55,22 @@ struct CommentView: View {
         .navigationTitle(Text("Send TON"))
         .navigationBarTitleDisplayMode(.inline)
         .backport.overlay(alignment: .bottom) {
-            Button(action: { dismiss() }, label: {
+            Button(action: {
+                Task {
+                    do {
+                        if let a = model.destinationAddress, let amount = model.amount {
+                            let outgoingTransaction = OutgoingTransaction(destinationAddress: a, amount: amount, comment: commentText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : commentText )
+                            try await model.sendTransaction(outgoingTransaction)
+                            
+                        }
+                        next()
+                    } catch {
+                        print(error)
+                    }
+                }
+                
+                
+            }, label: {
                 Text("Confirm and send")
             })
             .padding(.horizontal, 16)

@@ -32,7 +32,7 @@ public final class AppState: ObservableObject {
     private var currentTransactionsTask: Task<Void, Never>?
     private var storageObservables: Set<AnyCancellable> = []
     
-    private var tonBlockchain = TonBlockchain()
+    public var tonBlockchain = TonBlockchain()
     
     public init(setupComplete: Bool, wallet: TonWallet?, passcode: String, biometricsEnabled: Bool) {
         self.setupComplete = setupComplete
@@ -43,9 +43,16 @@ public final class AppState: ObservableObject {
     
     // MARK: - Updating
     
+    /// Called when a new wallet is created, restored, or when new wallet version is chosen. Current balance and transaction caches are cleared
     public func setWallet(_ newWallet: TonWallet) async {
         guard newWallet != self.wallet else { return }
         self.wallet = newWallet
+        
+        currentBalance = nil
+        currentTransactions = []
+        currentTransactionsGroupedByDate = [:]
+        currentTransactionsLoadedAtLeastOnce = false
+        
         self.currentBalanceTask?.cancel()
         self.currentBalanceTask = Task { [weak self] in
             for await v in tonBlockchain.balanceForAddress(newWallet.address) {
@@ -56,8 +63,8 @@ public final class AppState: ObservableObject {
                 self.currentBalance = v
             }
         }
+        
         self.currentTransactionsTask?.cancel()
-        self.currentTransactionsLoadedAtLeastOnce = false
         self.currentTransactionsTask = Task { [weak self] in
             for await txs in tonBlockchain.transactionsForAddress(newWallet.address) {
                 guard !Task.isCancelled, let self else { return }
@@ -167,7 +174,10 @@ public final class AppState: ObservableObject {
     
     public func debug_loadTestWallet() {
         Task {
-            let testWords = ["night", "﻿﻿﻿friend", "﻿﻿﻿volume", "﻿﻿﻿tilt", "﻿﻿﻿case", "﻿﻿﻿skate", "﻿﻿﻿rotate", "﻿﻿﻿away", "﻿﻿﻿physical", "﻿﻿﻿﻿smile", "﻿﻿﻿﻿unhappy", "﻿﻿﻿﻿hammer", "kitten", "﻿﻿﻿﻿energy", "﻿﻿﻿﻿worry", "﻿﻿﻿﻿ability", "﻿﻿﻿﻿burst", "﻿﻿﻿﻿label", "﻿﻿﻿﻿stereo", "﻿﻿﻿﻿jazz", "﻿﻿﻿﻿deputy", "﻿﻿﻿﻿keep", "﻿﻿﻿﻿critic", "﻿﻿﻿﻿joy",]
+            let testWords = ["night", "﻿﻿﻿friend", "﻿﻿﻿volume", "﻿﻿﻿tilt", "﻿﻿﻿case", "﻿﻿﻿skate",
+                             "﻿﻿﻿rotate", "﻿﻿﻿away", "﻿﻿﻿physical", "﻿﻿﻿﻿smile", "﻿﻿﻿﻿unhappy", "﻿﻿﻿﻿hammer",
+                             "kitten", "﻿﻿﻿﻿energy", "﻿﻿﻿﻿worry", "﻿﻿﻿﻿ability", "﻿﻿﻿﻿burst", "﻿﻿﻿﻿label",
+                             "﻿﻿﻿﻿stereo", "﻿﻿﻿﻿jazz", "﻿﻿﻿﻿deputy", "﻿﻿﻿﻿keep", "﻿﻿﻿﻿critic", "﻿﻿﻿﻿joy",]
             let key = try! await TonKey.derive(from: TonSeedPhrase(testWords))
             await setWallet(try! await TonWallet(version: .v4r2, keyPair: key))
             setupComplete = true

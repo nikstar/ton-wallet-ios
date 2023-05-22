@@ -26,7 +26,7 @@ public actor TonBlockchain: ObservableObject {
             } catch {
                 return nil
             }
-
+            
         }, onCancel: { Task { await self.setDeliveredBalance(false) } })
     }
     
@@ -74,10 +74,60 @@ public actor TonBlockchain: ObservableObject {
                 return transactions
             } catch {
                 print(error)
-                return nil
+                return []
             }
         }
     }
     
     
+    public nonisolated func sendTransaction(usingWallet wallet: TonWallet, to destinationAddress: TonAddress, amount: Toncoin, comment: String?) async throws {
+        do {
+            let myAddress = wallet.address.toSwiftyAddress()
+            var myContract = try await Contract(address: myAddress)
+            
+            let selectedContractInfo = myContract.info
+            print(myContract)
+            print(myContract.info)
+            print(myContract.info.balance)
+            
+            print(try! await myContract.transactions(after: nil))
+            
+            switch myContract.kind {
+            case .none:
+                fatalError()
+            case .uninitialized: // for uninited state we should pass initial data
+                myContract = Contract(
+                    address: myAddress,
+                    info: selectedContractInfo,
+                    kind: .walletV4R2,
+                    data: .zero // will be created automatically
+                )
+            default:
+                break
+            }
+            
+            guard let myAnyWallet = AnyWallet(contract: myContract) else {
+                fatalError()
+            }
+            
+            let key = try await Key.import(password: Data(), words: wallet.keyPair.seedPhrase.words)
+            
+            
+            let message = try await myAnyWallet.subsequentTransferMessage(
+                to: ConcreteAddress(address: destinationAddress.toSwiftyAddress()),
+                amount: Currency(value: Int64(amount.nano)),
+                message: (comment?.data(using: .utf8), nil),
+                key: key,
+                passcode: Data()
+            )
+            
+            let fees = try await message.fees() // get estimated fees
+            print("Estimated fees - \(fees)")
+            
+            try await message.send() // send transaction
+        } catch {
+            throw error
+        }
+    }
 }
+

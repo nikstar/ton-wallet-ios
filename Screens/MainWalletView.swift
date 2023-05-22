@@ -71,21 +71,35 @@ struct MainWalletView: View {
             Receive()
         }
         .sheet(isPresented: $sendSheetPresented) {
-            SendView(
-                destinationAddress: requestedSendAddress,
-                amount: requestedAmount,
-                comment: requestedText,
-                currentBalance: { appState.currentBalance },
-                resolveAddress: { string in
-                    if let address = TonAddress.parse(string) {
-                        return address
-                    } else {
-                        throw NSError()
+            
+            if #available(iOS 16, *) {
+                SendView(
+                    destinationAddress: requestedSendAddress,
+                    amount: requestedAmount,
+                    comment: requestedText,
+                    currentBalance: { appState.currentBalance },
+                    resolveAddress: { string in
+                        if let address = TonAddress.parse(string) {
+                            return address
+                        } else {
+                            throw NSError()
+                        }
+                    },
+                    authorizeTransaction: { _ in },
+                    sendTransaction: { transaction in
+                        guard let wallet = appState.wallet else { return }
+                        Task {
+                            try? await appState.tonBlockchain.sendTransaction(usingWallet: wallet, to: transaction.destinationAddress, amount: transaction.amount, comment: transaction.comment)
+                        }
+                        
                     }
-                },
-                authorizeTransaction: { _ in },
-                sendTransaction: { _ in }
-            )
+                )
+            } else {
+                // Fallback on earlier versions
+                NavigationView {
+                    Text("iOS 16 only at the moment")
+                }
+            }
         }
         .onChange(of: appState.requestedTonURL) { requestedTonURL in
             guard appState.wallet != nil, let requestedTonURL else { return }
@@ -198,6 +212,8 @@ struct MainWalletView: View {
 
                     .listRowBackground(Color.white)
                     .foregroundColor(.black)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                    .animation(.default, value: appState.currentTransactionsGroupedByDate)
                     
                 }
 //                .border(Color.red)

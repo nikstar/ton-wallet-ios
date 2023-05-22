@@ -2,13 +2,15 @@
 import SwiftUI
 import SwiftUIBackports
 import SharedUI
+import TonCore
 
-struct EnterAddressView<V: View>: View {
+struct EnterAddressView: View {
     
-    @ViewBuilder var next: () -> V
+     var next: () -> ()
     
     @State var addressText: String = ""
     @State var addressIsFocused: Bool = false
+    @EnvironmentObject var model: Model
     
     var body: some View {
         ScrollView {
@@ -37,13 +39,24 @@ struct EnterAddressView<V: View>: View {
             .padding(.bottom, 16)
             .padding(.horizontal, 16)
             
-            
             .navigationTitle(Text("Send TON"))
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(false)
+            
             .fakeBackButton()
         }
-        .continueButton(v: next)
+        .onAppear {
+            addressText = model.destinationAddress?.string(.base64url) ?? ""
+        }
+        .continueButton {
+            Button(action: continueAction) {
+                        Text("Continue")
+                
+            }
+            .buttonStyle(.tonBlue)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
+        }
     }
     
     // MARK: - Actions
@@ -51,11 +64,23 @@ struct EnterAddressView<V: View>: View {
     func paste() {
         if let s = UIPasteboard.general.string, !s.isEmpty {
             addressText = s
+            
         }
     }
     
     func scan() {
-        // todo
+        // todo; use button in main view instead
+    }
+
+    func continueAction() {
+        Task {
+            if let a = TonAddress.parse(addressText) {
+                model.destinationAddress = a
+                next()
+            } else {
+                addressText = ""
+            }
+        }
     }
 }
 
@@ -65,22 +90,13 @@ extension View {
     @ViewBuilder fileprivate func continueButton(v: () -> some View) -> some View {
         if #available(iOS 16, *) {
             self.safeAreaInset(edge: .bottom) {
-                _continueButton(v: v)
+                v()
             }
         } else {
             self.backport.overlay(alignment: .bottom) {
-                _continueButton(v: v)
+                v()
             }
         }
-    }
-    
-    private func _continueButton(v: () -> some View) -> some View {
-        NavigationLink(destination: { v() }) {
-            Text("Continue")
-        }
-        .buttonStyle(.tonBlue)
-        .padding(.vertical, 12)
-        .padding(.horizontal, 16)
     }
 }
 
@@ -92,3 +108,5 @@ struct EnterAddress_Previews: PreviewProvider {
         }
     }
 }
+
+

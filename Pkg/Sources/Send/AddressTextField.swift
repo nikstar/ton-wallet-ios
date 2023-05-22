@@ -10,11 +10,11 @@ struct AddressTextField: View {
     var placeholder: String
     
     var body: some View {
-//        if #available(iOS 16, *) {
-//            _ios16AddressTextField(text: _text, placeholder: placeholder)
-//        } else {
+        if #available(iOS 16, *) {
+            _ios16AddressTextField(text: _text, placeholder: placeholder)
+        } else {
             _CompatAddressTextField(text: _text, isFocused: _isFocused, placeholder: placeholder)
-//        }
+        }
     }
 }
 

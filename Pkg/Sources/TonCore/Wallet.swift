@@ -5,7 +5,7 @@ import SwiftyTON
 
 public struct TonWallet: Hashable, Codable {
 
-    public enum Version: Hashable, Codable, CaseIterable {
+    public enum Version: String, Hashable, Codable, CaseIterable {
         
         case v2r1
         case v2r2

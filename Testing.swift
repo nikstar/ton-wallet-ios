@@ -1,9 +1,7 @@
 //import SwiftyTON
 //import SwiftUI
 //import TonCore
-//
-//
-let testWords = ["night", "﻿﻿﻿friend", "﻿﻿﻿volume", "﻿﻿﻿tilt", "﻿﻿﻿case", "﻿﻿﻿skate", "﻿﻿﻿rotate", "﻿﻿﻿away", "﻿﻿﻿physical", "﻿﻿﻿﻿smile", "﻿﻿﻿﻿unhappy", "﻿﻿﻿﻿hammer", "kitten", "﻿﻿﻿﻿energy", "﻿﻿﻿﻿worry", "﻿﻿﻿﻿ability", "﻿﻿﻿﻿burst", "﻿﻿﻿﻿label", "﻿﻿﻿﻿stereo", "﻿﻿﻿﻿jazz", "﻿﻿﻿﻿deputy", "﻿﻿﻿﻿keep", "﻿﻿﻿﻿critic", "﻿﻿﻿﻿joy",]
+
 //
 //
 //struct SwiftyContentView: View {

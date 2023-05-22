@@ -143,7 +143,18 @@ public struct NewWalletFlow: View {
     }
     
     var importExisting: some View {
-        ImportExisting(checkWords: { _ in self.path.append(.importSuccess); return true }, doNotHave: { self.path.append(.importFailure) })
+        ImportExisting(checkWords: { words in
+            do {
+                let phrase = try TonSeedPhrase(words)
+                viewModel.key = try await TonKey.derive(from: phrase)
+                
+                self.path.append(.passcode)
+                return true
+            } catch {
+                return false
+            }
+            
+        }, doNotHave: { self.path.append(.importFailure) })
     }
     
     var importSuccess: some View {
