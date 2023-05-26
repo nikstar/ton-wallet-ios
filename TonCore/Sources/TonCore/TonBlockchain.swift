@@ -1,17 +1,18 @@
 
 import Foundation
 import SwiftyTON
+import TON3
 
 
 public actor TonBlockchain: ObservableObject {
-    
-    var isInitialized = false
     
     private var deliveredBalance = false
     private var deliveredTransavtions = false
     
     
-    public init() { }
+    public init() {
+        
+    }
     
     public nonisolated func balanceForAddress(_ address: TonAddress) -> AsyncStream<Toncoin?> {
         return AsyncStream(unfolding: { [self] in
@@ -50,7 +51,6 @@ public actor TonBlockchain: ObservableObject {
                 let ts = try await c.transactions(after: nil)
                 var transactions: [TonTransaction] = []
                 for t in ts {
-                    print(t)
                     if let inMessage = t.in, let fromRaw = inMessage.sourceAccountAddress {
                         let from = TonAddress.fromSwiftyAddress(fromRaw.address)
                         let value = Toncoin(nano: Int(inMessage.value.value))
@@ -90,7 +90,7 @@ public actor TonBlockchain: ObservableObject {
             print(myContract.info)
             print(myContract.info.balance)
             
-            print(try! await myContract.transactions(after: nil))
+//            print(try! await myContract.transactions(after: nil))
             
             switch myContract.kind {
             case .none:
@@ -124,7 +124,60 @@ public actor TonBlockchain: ObservableObject {
             let fees = try await message.fees() // get estimated fees
             print("Estimated fees - \(fees)")
             
-            try await message.send() // send transaction
+//            try await message.send() // send transaction
+            
+            
+            // ----------------------
+            // ----------------------
+            // ----------------------
+            
+            // check if wallet address is initialized
+            let accountState = try await tonlibWrapper.accountWithAddress(wallet.address.string(.base64))
+            if accountState.code.isEmpty {
+                // not initialized
+                let initialState = wallet.initialState
+                print(initialState)
+            }
+            print(accountState)
+            
+            // add initState if not
+            // get seqno from the blockchain
+            // create an external message
+            // send it
+            
+            
+            
+//            let updated = try await Contract(address: contract.address)
+//            guard updated.info.balance > amount
+//            else {
+//                throw ContractError.notEnaughtBalance
+//            }
+//
+//            let subsequentExternalMessageBody = try await TON3.transfer(
+//                external: try await subsequentExternalMessage(),
+//                workchain: concreteAddress.address.workchain,
+//                address: concreteAddress.address.hash,
+//                amount: amount.value,
+//                bounceable: concreteAddress.representation.flags.contains(.bounceable),
+//                payload: message.body?.bytes,
+//                state: message.initial?.bytes
+//            )
+//
+//            var subsequentInitialCondition: Contract.InitialCondition?
+//            if updated.kind == .uninitialized {
+//                subsequentInitialCondition = try await subsequentExternalMessageInitialCondition(
+//                    key: key
+//                )
+//            }
+//
+//            let boc = BOC(bytes: subsequentExternalMessageBody)
+//            return try await Message(
+//                destination: contract.address,
+//                initial: subsequentInitialCondition,
+//                body: try await boc.signed(with: key, localUserPassword: passcode)
+//            )
+
+            
         } catch {
             throw error
         }

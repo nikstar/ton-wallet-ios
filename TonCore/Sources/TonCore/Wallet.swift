@@ -5,8 +5,8 @@ import SwiftyTON
 
 public struct TonWallet: Hashable, Codable {
 
-    public enum Version: String, Hashable, Codable, CaseIterable {
-        
+    public enum Version: String, Hashable, Codable, CaseIterable, Comparable {
+
         case v2r1
         case v2r2
         
@@ -18,6 +18,10 @@ public struct TonWallet: Hashable, Codable {
         
         public static var `default`: Self { .v4r2 }
         public var isDefault: Bool { self == .v4r2 }
+
+        public static func < (lhs: TonWallet.Version, rhs: TonWallet.Version) -> Bool {
+            lhs.rawValue < rhs.rawValue
+        }
     }
 
     public let version: Version

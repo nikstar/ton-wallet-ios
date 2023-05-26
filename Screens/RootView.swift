@@ -35,7 +35,9 @@ struct RootView: View {
                 }
             }
             .backport.overlay(alignment: .top) {
-                DebugOverlay()
+                if showsDebugOverlay {
+                    DebugOverlay()
+                }
             }
             .onAppear {
                 maybeShowSetup(setupComplete: appState.setupComplete)

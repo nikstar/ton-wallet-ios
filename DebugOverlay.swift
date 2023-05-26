@@ -21,6 +21,13 @@ struct DebugOverlay: View {
             Button(action: { appState.debug_fullReset() }) {
                 Text("Delete all data end reset")
             }
+            Button(action: {
+                Task {
+                    try! await appState.tonBlockchain.sendTransaction(usingWallet: appState.wallet!, to: appState.wallet!.address, amount: Toncoin(nano: 1_000), comment: "Test") }
+                }) {
+                    Text("Send test transaction")
+                }
+            
         }
         .padding(.top, safeAreaInsets.top)
     }

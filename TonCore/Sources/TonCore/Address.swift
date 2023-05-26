@@ -103,13 +103,11 @@ extension TonAddress: CustomStringConvertible {
         case base64url
     }
     
-    /**
-     Returns a string representation of the address, formatted according to the specified display mode.
-     
-     - Parameters:
-         - displayMode: The desired display mode for the address.
-         - characters: An optional tuple specifying how many characters to include at the start and end of the returned string. If not provided, the entire string is returned.
-     */
+    ///  Returns a string representation of the address, formatted according to the specified display mode.
+    ///
+    ///  - Parameters:
+    ///      - displayMode: The desired display mode for the address.
+    ///      - characters: An optional tuple specifying how many characters to include at the start and end of the returned string. If not provided, the entire string is returned.
     public func string(_ displayMode: DisplayMode, characters: (start: Int, end: Int)? = nil) -> String {
         let s: String
         switch displayMode {

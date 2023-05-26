@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5810084C29EFE6CF00C6A824 /* TonCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5810084B29EFE6CF00C6A824 /* TonCore */; };
 		582AA8EE29D70703002C693B /* Receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8ED29D70703002C693B /* Receive.swift */; };
 		582AA8F029D719F2002C693B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8EF29D719F2002C693B /* TransactionView.swift */; };
 		582AA8F229D71E37002C693B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AA8F129D71E37002C693B /* SettingsView.swift */; };
@@ -18,11 +17,11 @@
 		585FA86029E7DDBA0072F52C /* DebugOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */; };
 		585FA86529E7F95E0072F52C /* MainWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA86429E7F95E0072F52C /* MainWalletView.swift */; };
 		585FA86729E8098F0072F52C /* OverrideStatusBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FA86629E8098F0072F52C /* OverrideStatusBarColor.swift */; };
-		58A2C0202A00E2E500E2F4C6 /* AppState in Frameworks */ = {isa = PBXBuildFile; productRef = 58A2C01F2A00E2E500E2F4C6 /* AppState */; };
-		58A2C0222A00E2E500E2F4C6 /* Send in Frameworks */ = {isa = PBXBuildFile; productRef = 58A2C0212A00E2E500E2F4C6 /* Send */; };
-		58AC7E7B29F92CCB0012B6A1 /* NewWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 58AC7E7A29F92CCB0012B6A1 /* NewWallet */; };
-		58AC7E7D29F92CCB0012B6A1 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 58AC7E7C29F92CCB0012B6A1 /* SharedUI */; };
-		58AC7E7F29FAB8950012B6A1 /* SwiftyTON in Frameworks */ = {isa = PBXBuildFile; productRef = 58AC7E7E29FAB8950012B6A1 /* SwiftyTON */; };
+		58A840EE2A1CC83800A5D247 /* NewWallet in Frameworks */ = {isa = PBXBuildFile; productRef = 58A840ED2A1CC83800A5D247 /* NewWallet */; };
+		58A840F02A1CC83800A5D247 /* Send in Frameworks */ = {isa = PBXBuildFile; productRef = 58A840EF2A1CC83800A5D247 /* Send */; };
+		58A840F22A1CD07500A5D247 /* AppState in Frameworks */ = {isa = PBXBuildFile; productRef = 58A840F12A1CD07500A5D247 /* AppState */; };
+		58A840F42A1CD08A00A5D247 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 58A840F32A1CD08A00A5D247 /* SharedUI */; };
+		58A840F62A1CD08A00A5D247 /* TonCore in Frameworks */ = {isa = PBXBuildFile; productRef = 58A840F52A1CD08A00A5D247 /* TonCore */; };
 		58EBBB8529D4218200742969 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EBBB8429D4218200742969 /* App.swift */; };
 		58EBBB8729D4218200742969 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EBBB8629D4218200742969 /* RootView.swift */; };
 		58EBBB8929D4218400742969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58EBBB8829D4218400742969 /* Assets.xcassets */; };
@@ -49,13 +48,15 @@
 		582AA8F629D72074002C693B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		582AA8F829D72142002C693B /* _TonConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TonConnectView.swift; sourceTree = "<group>"; };
 		5852A54D29DC5D5400A14C59 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
-		585A4B2B29ED3A2700547DB3 /* Pkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Pkg; sourceTree = "<group>"; };
 		585FA85929E545280072F52C /* SelfSizingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingSheet.swift; sourceTree = "<group>"; };
 		585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOverlay.swift; sourceTree = "<group>"; };
 		585FA86429E7F95E0072F52C /* MainWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWalletView.swift; sourceTree = "<group>"; };
 		585FA86629E8098F0072F52C /* OverrideStatusBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideStatusBarColor.swift; sourceTree = "<group>"; };
+		586067132A20778B000DC31C /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
+		586067142A207822000DC31C /* TonCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TonCore; sourceTree = "<group>"; };
 		589FAC4C29E1BD5C009D6D17 /* Toncoin Wallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Toncoin Wallet.entitlements"; sourceTree = "<group>"; };
 		58B056D029DAAF7800C23FAF /* Toncoin Wallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toncoin Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		58EAC76C2A1CA73800807FC9 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		58EBBB8129D4218200742969 /* Toncoin Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toncoin Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58EBBB8429D4218200742969 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		58EBBB8629D4218200742969 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -67,12 +68,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58AC7E7F29FAB8950012B6A1 /* SwiftyTON in Frameworks */,
-				5810084C29EFE6CF00C6A824 /* TonCore in Frameworks */,
-				58A2C0202A00E2E500E2F4C6 /* AppState in Frameworks */,
-				58AC7E7D29F92CCB0012B6A1 /* SharedUI in Frameworks */,
-				58A2C0222A00E2E500E2F4C6 /* Send in Frameworks */,
-				58AC7E7B29F92CCB0012B6A1 /* NewWallet in Frameworks */,
+				58A840F22A1CD07500A5D247 /* AppState in Frameworks */,
+				58A840F42A1CD08A00A5D247 /* SharedUI in Frameworks */,
+				58A840F02A1CC83800A5D247 /* Send in Frameworks */,
+				58A840F62A1CD08A00A5D247 /* TonCore in Frameworks */,
+				58A840EE2A1CC83800A5D247 /* NewWallet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,6 @@
 				582AA8EF29D719F2002C693B /* TransactionView.swift */,
 				582AA8F629D72074002C693B /* ScannerView.swift */,
 				582AA8F829D72142002C693B /* _TonConnectView.swift */,
-				585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -106,7 +105,6 @@
 		5887E10C29DACB5200F513C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5852A54D29DC5D5400A14C59 /* Testing.swift */,
 				589FAC4C29E1BD5C009D6D17 /* Toncoin Wallet.entitlements */,
 				58EBBB8829D4218400742969 /* Assets.xcassets */,
 				58B056D029DAAF7800C23FAF /* Toncoin Wallet-Bridging-Header.h */,
@@ -115,15 +113,27 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		58A840EC2A1CC83700A5D247 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58EBBB7829D4218200742969 = {
 			isa = PBXGroup;
 			children = (
 				58EBBB8429D4218200742969 /* App.swift */,
+				5852A54D29DC5D5400A14C59 /* Testing.swift */,
+				585FA85F29E7DDBA0072F52C /* DebugOverlay.swift */,
 				582AA8F329D71F3B002C693B /* Screens */,
-				585A4B2B29ED3A2700547DB3 /* Pkg */,
+				586067132A20778B000DC31C /* Features */,
+				58EAC76C2A1CA73800807FC9 /* Core */,
+				586067142A207822000DC31C /* TonCore */,
 				585FA85829E545170072F52C /* Helpers */,
 				5887E10C29DACB5200F513C0 /* Resources */,
 				58EBBB8229D4218200742969 /* Products */,
+				58A840EC2A1CC83700A5D247 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,12 +163,11 @@
 			);
 			name = "Toncoin Wallet";
 			packageProductDependencies = (
-				5810084B29EFE6CF00C6A824 /* TonCore */,
-				58AC7E7A29F92CCB0012B6A1 /* NewWallet */,
-				58AC7E7C29F92CCB0012B6A1 /* SharedUI */,
-				58AC7E7E29FAB8950012B6A1 /* SwiftyTON */,
-				58A2C01F2A00E2E500E2F4C6 /* AppState */,
-				58A2C0212A00E2E500E2F4C6 /* Send */,
+				58A840ED2A1CC83800A5D247 /* NewWallet */,
+				58A840EF2A1CC83800A5D247 /* Send */,
+				58A840F12A1CD07500A5D247 /* AppState */,
+				58A840F32A1CD08A00A5D247 /* SharedUI */,
+				58A840F52A1CD08A00A5D247 /* TonCore */,
 			);
 			productName = "ton-wallet";
 			productReference = 58EBBB8129D4218200742969 /* Toncoin Wallet.app */;
@@ -362,9 +371,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ton-wallet-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR codes";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is used to authenticate TON payments";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -402,9 +411,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ton-wallet-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR codes";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is used to authenticate TON payments";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -451,29 +460,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5810084B29EFE6CF00C6A824 /* TonCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TonCore;
-		};
-		58A2C01F2A00E2E500E2F4C6 /* AppState */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AppState;
-		};
-		58A2C0212A00E2E500E2F4C6 /* Send */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Send;
-		};
-		58AC7E7A29F92CCB0012B6A1 /* NewWallet */ = {
+		58A840ED2A1CC83800A5D247 /* NewWallet */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NewWallet;
 		};
-		58AC7E7C29F92CCB0012B6A1 /* SharedUI */ = {
+		58A840EF2A1CC83800A5D247 /* Send */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Send;
+		};
+		58A840F12A1CD07500A5D247 /* AppState */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppState;
+		};
+		58A840F32A1CD08A00A5D247 /* SharedUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedUI;
 		};
-		58AC7E7E29FAB8950012B6A1 /* SwiftyTON */ = {
+		58A840F52A1CD08A00A5D247 /* TonCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SwiftyTON;
+			productName = TonCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

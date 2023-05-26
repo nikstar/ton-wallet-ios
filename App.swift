@@ -3,7 +3,7 @@ import SwiftUI
 import AppState
 
 #if DEBUG
-let showsDebugOverlay = true
+let showsDebugOverlay = false // set to true
 #else
 let showsDebugOverlay = false
 #endif

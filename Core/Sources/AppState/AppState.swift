@@ -1,10 +1,9 @@
 
 import SwiftUI
-import SwiftyTON
 import TonCore
 import Collections
 import Combine
-import SwiftUIBackports
+
 
 // key
 // (Key + wallet type) -> address
